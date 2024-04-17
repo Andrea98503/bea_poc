@@ -14,7 +14,8 @@ module.exports = {
         'inputBorder' : '#9198a6',
         'inputBg': '#eff3fb',
         'dropdownBg': '#dfe6fa',
-        'dropdownSelected': '#1a365d'
+        'dropdownSelected': '#1a365d',
+        'darkBlue' : '#29337a'
       },
       width: {
         '75': '18.75rem',

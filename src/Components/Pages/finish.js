@@ -7,34 +7,16 @@ import Dropdown from "../Molecules/dropdown";
 import DatePicker from "../Molecules/datePicker";
 
 const Finish = () => {
-    const [isShowModal, setShowModal] = useState(false)
     return (
         <div>
-            <div className="rounded-t-lg rounded-b-3xl mx-8 mt-12 mb-10 shadow-md">
-                <div className="bg-header-gray h-16 flex flex-row items-center rounded-t-lg w-full px-4">
-                    <div className="justify-center w-full">
-                        <div className="text-2xl text-white">Personal Information</div>
-                    </div>
-                    <div onClick={() => setShowModal(true)} className="h-9 w-9 justify-self-end"><RoundedCross color={"#fff"} /></div>
+            <div className="m-20">
+                <div className="py-8 mr-5 text-2xl font-extralight">
+                    By using our services, you agree to comply with and be bound by our terms and conditions
                 </div>
-                <div className="py-8 mr-5">
-                    Finish
+                <div >
+                    <CheckBoxGroup id={"dec"} optionName={["Customer Declaration"]}/>
                 </div>
             </div>
-            
-            {isShowModal &&
-                (<Modal content={"Do you want to cancel this ?"} buttons={[
-                    <Button
-                        type="default"
-                        onClick={() => setShowModal(false)}
-                        text="Cancel"
-                    />,
-                    <Button
-                        type="default"
-                        onClick={() => setShowModal(false)}
-                        text="Ok"
-                    />
-                ]} />)}
         </div>
     )
 }

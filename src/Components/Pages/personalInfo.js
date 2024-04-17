@@ -22,13 +22,13 @@ const PersonalInfo = () => {
                         <div className="flex flex-row justify-between mb-3"><label for={"title"} className="ml-7 text-2xl font-thin">Title</label>
                             <Dropdown width={"w-64"} height={"h-11"} options={["Mr.", "Mrs.", "Ms.", "Miss", "Dr.", "Prof.", "Hon.", "Lady.", "Lord.", "Sir."]}/></div>
                         <div className="flex flex-row justify-between mb-3"><label for={"surname"} className="ml-7 text-2xl font-thin">Surname</label>
-                            <input id="surname" type="dropdown" className="relative peer shrink-0 appearance-none border h-11 w-75 bg-inputBg border-inputBorder rounded-xl" /></div>
+                            <input id="surname" type="dropdown" className="px-4 relative peer shrink-0 appearance-none border h-11 w-75 bg-inputBg border-inputBorder rounded-xl" /></div>
                         <div className="flex flex-row justify-between mb-3"><label for={"forenames"} className="ml-7 text-2xl font-thin">Forenames</label>
-                            <input id="forenames" type="dropdown" className="relative peer shrink-0 appearance-none border h-11 w-75 bg-inputBg border-inputBorder rounded-xl" /></div>
+                            <input id="forenames" type="dropdown" className=" px-4 relative peer shrink-0 appearance-none border h-11 w-75 bg-inputBg border-inputBorder rounded-xl" /></div>
                         <div className="flex flex-row justify-between mb-3"><label for={"dob"} className="ml-7 text-2xl font-thin">Date of Birth</label>
                         <DatePicker/></div>
                         <div className="flex flex-row justify-between mb-3"><label for={"otherNames"} className="ml-7 text-2xl font-thin">Former or Other Names( if any)</label>
-                            <input id="otherNames" type="dropdown" className="relative peer shrink-0 appearance-none border h-11 w-75 bg-inputBg border-inputBorder rounded-xl" /></div>
+                            <input id="otherNames" type="dropdown" className="px-4 relative peer shrink-0 appearance-none border h-11 w-75 bg-inputBg border-inputBorder rounded-xl" /></div>
                         <div className="flex flex-row justify-between mb-3"><label for={"gender"} className="ml-7 text-2xl font-thin">Gender</label>
                         <Dropdown width={"w-64"} height={"h-11"} options={["Male", "Female", "Other"]}/></div>
                         <div className="flex flex-row justify-between mb-3"><label for={"maritalStatus"} className="ml-7 text-2xl font-thin">Marital Status</label><Dropdown width={"w-64"} height={"h-11"} options={["Single", "Married"]}/></div>

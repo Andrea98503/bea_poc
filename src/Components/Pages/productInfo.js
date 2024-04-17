@@ -10,7 +10,7 @@ import ArrowRight from "../../assets/icons/arrowRight";
 
 const ProductInfo = () => {
     const [isShowModal, setShowModal] = useState(false)
-    const [isSelected, setSelected] = useState("CallDeposit")
+    const [isSelected, setSelected] = useState("CurrentAccount")
     const ToggleSelection = (item) => {
         setSelected(item);
     };
@@ -34,35 +34,35 @@ const ProductInfo = () => {
                     <div onClick={() => setShowModal(true)} className="h-9 w-9 justify-self-end"><RoundedCross color={"#fff"} /></div>
                 </div>
                 <div className="flex flex-row">
-                    <div className="w-5/12">
-                        <div className="bg-inputBg divide-y divide-slate-300 py-3">{ProductNames.map((item, i) => (
-                            <div key={i} onClick={() => ToggleSelection(item.index)} className="flex flex-row justify-between py-3.5 px-5 bg-inputBg hover:bg-white"><div className="text-xl font-extralight ">{item.name}</div><div className="h-7 w-7">{isSelected === item.index ? <ArrowRight /> : <DoubleArrowsRight />}</div></div>
+                    <div className="w-5/12 bg-inputBg">
+                        <div className=" divide-y divide-slate-300 py-3">{ProductNames.map((item, i) => (
+                            <div key={i} onClick={() => ToggleSelection(item.index)} className={`flex flex-row justify-between bg-inputBg hover:bg-white ${isSelected === item.index ? "bg-white" : "bg-inputBg"}`}>{isSelected === item.index && (<div className="w-2 bg-darkBlue"></div>)}<div className="text-xl font-extralight px-5 py-3.5 text-left flex w-full">{item.name}</div><div className="h-7 w-7 py-3.5 mr-2">{isSelected === item.index ? <ArrowRight /> : <DoubleArrowsRight />}</div></div>
                         ))}</div>
                     </div>
                     <div className="w-7/12">{isSelected === "CallDeposit" && (
                         <div className="py-8 mr-5">
                             <ul className="grid grid-flow-row auto-rows-max">
-                                <div className="flex flex-row justify-between mb-3"><label for={"title"} className="ml-7 text-xl font-extralight ">Account Currency</label>
-                                    <Dropdown width={"w-32"} height={"h-11"} options={["Mr.", "Mrs.", "Ms."]} /></div>
-                                <div className="flex flex-row justify-between mb-3"><label for={"title"} className="ml-7 text-xl font-extralight">Frequency of Statement</label>
-                                    <Dropdown width={"w-32"} height={"h-11"} options={["Mr.", "Mrs.", "Ms."]} /></div>
-                                <div className="flex flex-row justify-between mb-3"><label for={"title"} className="ml-7 text-xl font-extralight">Purpose</label>
-                                    <Dropdown width={"w-32"} height={"h-11"} options={["Mr.", "Mrs.", "Ms."]} /></div>
-                                <div className="flex flex-row justify-between mb-3"><label for={"title"} className="ml-7 text-xl font-extralight">To which countries</label>
-                                    <Dropdown width={"w-32"} height={"h-11"} options={["Mr.", "Mrs.", "Ms."]} /></div>
-                                <div className="flex flex-row justify-between mb-3"><label for={"title"} className="ml-7 text-xl font-extralight">From which countries</label>
-                                    <Dropdown width={"w-32"} height={"h-11"} options={["Mr.", "Mrs.", "Ms."]} /></div>
-                                <div className="flex flex-row justify-between mb-3"><label for={"surname"} className="ml-7 text-xl font-extralight">Other reason</label>
-                                    <input id="surname" type="dropdown" className="relative peer shrink-0 appearance-none border h-11 w-42 bg-inputBg border-inputBorder rounded-xl" /></div>
-                                    <div className="flex flex-row justify-between mb-3"><label for={"surname"} className="ml-7 text-xl font-extralight">Account number</label>
-                                    <input id="surname" type="dropdown" className="relative peer shrink-0 appearance-none border h-11 w-42 bg-inputBg border-inputBorder rounded-xl" /></div>
+                                <div className="flex flex-row justify-between mb-3"><label for={"accountCurrency"} className="ml-7 text-xl font-extralight ">Account Currency</label>
+                                    <Dropdown width={"w-32"} height={"h-11"} options={["EUR", "USD", "JPY"]} /></div>
+                                <div className="flex flex-row justify-between mb-3"><label for={"frequency"} className="ml-7 text-xl font-extralight">Frequency of Statement</label>
+                                    <Dropdown width={"w-32"} height={"h-11"} options={["Weekly", "Monthly", "Quarterly", "Annually"]} /></div>
+                                <div className="flex flex-row justify-between mb-3"><label for={"purpose"} className="ml-7 text-xl font-extralight">Purpose</label>
+                                    <Dropdown width={"w-32"} height={"h-11"} options={["Savings", "Checking"]} /></div>
+                                <div className="flex flex-row justify-between mb-3"><label for={"toWhichCountries"} className="ml-7 text-xl font-extralight">To which countries</label>
+                                    <Dropdown width={"w-32"} height={"h-11"} options={["India", "China", "Indonesia", "Pakistan", "Bangladesh", "Japan"]} /></div>
+                                <div className="flex flex-row justify-between mb-3"><label for={"fromWhichCountries"} className="ml-7 text-xl font-extralight">From which countries</label>
+                                    <Dropdown width={"w-32"} height={"h-11"} options={["India", "China", "Indonesia", "Pakistan", "Bangladesh", "Japan"]} /></div>
+                                <div className="flex flex-row justify-between mb-3"><label for={"other"} className="ml-7 text-xl font-extralight">Other reason</label>
+                                    <input id="surname" type="dropdown" className="px-4 relative peer shrink-0 appearance-none border h-11 w-42 bg-inputBg border-inputBorder rounded-xl" /></div>
+                                <div className="flex flex-row justify-between mb-3"><label for={"accountNumber"} className="ml-7 text-xl font-extralight">Account number</label>
+                                    <input id="surname" type="text" className="px-4 relative peer shrink-0 appearance-none border h-11 w-42 bg-inputBg border-inputBorder rounded-xl" /></div>
 
                             </ul>
                         </div>
                     )}</div>
                 </div>
             </div>
-            
+
             {isShowModal &&
                 (<Modal content={"Do you want to cancel this ?"} buttons={[
                     <Button

@@ -7,19 +7,19 @@ import ProductSelection from "../Pages/productSelection";
 export const SCREEN_NAMES = {
     PRODUCT_SELECTION: {
         KEY: "PRODUCT_SELECTION",
-        ELEMENT: <ProductSelection/>
+        ELEMENT: <ProductSelection />
     },
     PERSONAL_INFO: {
         KEY: "PERSONAL_INFO",
-        ELEMENT: <PersonalInfo/>
+        ELEMENT: <PersonalInfo />
     },
     PRODUCT_INFO: {
         KEY: "PRODUCT_INFO",
-        ELEMENT: <ProductInfo/>
+        ELEMENT: <ProductInfo />
     },
     FINISH: {
         KEY: "FINISH",
-        ELEMENT: <Finish/>
+        ELEMENT: <Finish />
     }
 }
 export const FORM_NAVIGATION = [
@@ -39,10 +39,16 @@ export const FORM_NAVIGATION = [
         NEXT_SCREEN_KEY: SCREEN_NAMES.FINISH.KEY,
     }
 ]
-const Footer = ({onPreviousClick, onNextClick}) => {
-    
+const Footer = ({ onPreviousClick, onNextClick, step }) => {
+
     return (
-        <div className="mx-8 flex flex-row justify-between"><div><Button onClick={onPreviousClick} type={"default"} text={"Previous"}  /></div><div><Button onClick={onNextClick} type={"Next"} text={"Next"} /></div></div>
+        <div className=" w-full">
+            {
+                step !== "FINISH" ? (
+                    <div className="mx-8 flex flex-row justify-between flex-wrap items-center"><div><Button dissabled={step === "PRODUCT_SELECTION" ? true : false} onClick={onPreviousClick} type={"default"} text={"Previous"} /></div><div><Button onClick={onNextClick} type={"Next"} text={"Next"} /></div></div>
+                ) : (<div className="flex items-center x-full justify-center"><Button type={"Finish"} text={"Finish"} /></div>)
+            }</div>
+
     )
 }
 export default Footer;

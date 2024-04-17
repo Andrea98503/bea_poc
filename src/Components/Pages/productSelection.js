@@ -24,9 +24,9 @@ const ProductSelection = () => {
                     <div className="justify-center w-full">
                         <div className="text-2xl text-white text-center">Product Selection</div>
                     </div>
-                    <div onClick={() => setShowModal(true)} className="h-9 w-9 justify-self-end"><RoundedCross color={"#fff"}/></div>
+                    <div onClick={() => setShowModal(true)} className="h-9 w-9 justify-self-end"><RoundedCross color={"#fff"} /></div>
                 </div>
-                <div className="px-4 py-8">
+                <div className="px-4 py-6">
                     <div className="flex flex-row gap-5">
                         <div className="rounded-full bg-header-gray h-8 w-8 shrink-0">
                             <div className="text-white text-xl pl-3 pt-0.5 font-thin">1</div>
@@ -35,29 +35,29 @@ const ProductSelection = () => {
                             Which product would you like to open?
                         </div>
                     </div>
-                    <div className="ml-12 mr-5 mt-10 gap-2 flex flex-wrap">
+                    <div className="ml-12 mr-5 mt-9 gap-1.5 flex flex-wrap">
                         {ProductNames.map((item) => (
                             <CheckBoxGroup key={item.index} optionName={item.name} id={item.index} />
                         ))}
 
                     </div>
-                    <div className="text-red-600 font-thin text-base text-end mr-10 mt-8">*Please choose at least one option</div>
+                    <div className="text-red-600 font-thin text-base text-end mr-10 mt-7">*Please choose at least one option</div>
 
                 </div>
             </div>
-            
+
             {isShowModal &&
                 (<Modal content={"Do you want to cancel this ?"} buttons={[
-                <Button
-                    type="default"
-                    onClick={() => setShowModal(false)}
-                    text="Cancel"
-                />, 
-                <Button
-                    type="default"
-                    onClick={() => setShowModal(false)}
-                    text="Ok"
-                />
+                    <Button
+                        type="default"
+                        onClick={() => setShowModal(false)}
+                        text="Cancel"
+                    />,
+                    <Button
+                        type="default"
+                        onClick={() => setShowModal(false)}
+                        text="Ok"
+                    />
                 ]} />)}
         </div>
     )
