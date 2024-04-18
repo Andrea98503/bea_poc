@@ -45,7 +45,7 @@ const App = () => {
       <NavBar />
       {renderCurrentScreen()}
       <Footer
-      step={currentScreen}
+        step={currentScreen}
         onPreviousClick={handlePreviousClick}
         onNextClick={handleNextClick}
       />
