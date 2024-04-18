@@ -39,7 +39,7 @@ const App = () => {
         return null;
     }
   };
-  console.log("***",currentScreen);
+
   return (
     <div className="xl:mx-72 mx-10">
       <NavBar />
